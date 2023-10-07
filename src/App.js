@@ -13,7 +13,7 @@ function App() {
   const [message, setMessage] = useState("");
 
   useEffect(() => {
-    fetch(`http://localhost:8000/`)
+    fetch(`https://travel-explorer-backend-t29a.onrender.com`)
       .then((res) => res.json())
       .then((data) => setMessage(data.message));
   }, []);

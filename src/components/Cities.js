@@ -14,7 +14,7 @@ const Cities = () => {
 
     const handleSubmit = async () => {
         try {
-            let res = await fetch("http://localhost:8000/cities", {
+            let res = await fetch("https://travel-explorer-backend-t29a.onrender.com/cities", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -66,7 +66,7 @@ const Cities = () => {
     const handleSaveClick = async (cityName, location, country, image, places) => {
 
         // Send data to the backend via POST
-        await axios.post('http://localhost:8000/cities/save', {
+        await axios.post('https://travel-explorer-backend-t29a.onrender.com/cities/save', {
             "city": cityName,
             "country": country,
             "fullLocation": location,
