@@ -4,4 +4,4 @@ Installation Requirements
 1. Clone this repository
 2. Clone https://github.com/TazA01/travel-explorer-backend
 3. Install dependencies by running "npm install"
-4. Start server by running npm start
+4. Start server by running npm start on both frontend and backend repos. 
