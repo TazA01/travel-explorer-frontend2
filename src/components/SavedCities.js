@@ -5,13 +5,18 @@ import Places from "./Places";
 import SavedCityCard from "./SavedCityCard";
 import '../styles/SavedCities.css'
 
+let count = 0;
 const SavedCities = ({ cityName, country, location, image, places, id }) => {
     const [cityList, setCityList] = useState([])
 
     let savedCitiesClick = async () => {
-        let response = await axios.get("http://localhost:5000/cities/save");
+        let response = await axios.get("http://localhost:8000/cities/save");
         if (response.data == false) {
-            alert('You Have No Saved Cities. Please Save Cities You Want To To Visit!')
+            if (count < 1) {
+                alert('You Have No Saved Cities. Please Save Cities You Want To To Visit!');
+                count += 1;
+                console.log(count);
+            }
         };
 
         return response.data;
@@ -35,7 +40,7 @@ const SavedCities = ({ cityName, country, location, image, places, id }) => {
     })
 
     const remove = async (id) => {
-        await axios.delete(`http://localhost:5000/cities/delete/${id.id}`).then(() => {
+        await axios.delete(`http://localhost:8000/cities/delete/${id.id}`).then(() => {
             setCityList(cityList.filter(arr => arr[5] != id.id))
         })
         return (cityList)
