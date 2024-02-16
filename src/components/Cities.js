@@ -1,6 +1,5 @@
 import { React, useEffect, useState } from "react";
 import axios from "axios";
-import items from "../dummydata";
 import Places from "./Places";
 import CityCard from "./CityCard";
 import '../styles/Cities.css'
